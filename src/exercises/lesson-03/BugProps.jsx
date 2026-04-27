@@ -11,12 +11,12 @@
 
   Use the commented "Explanation" section at the bottom of this lesson's components.
 */
-
+import { useState } from 'react';
 export default function BugProps({ name = 'friend' }) {
-  let message = 'Hello, ' + name;
+  const [message, setMessage] = useState('Hello, ' + name);
 
   function handleChange() {
-    message = 'Hi, ' + name + '!';
+    setMessage('Hi, ' + name + '!');
   }
 
   return (
@@ -28,4 +28,6 @@ export default function BugProps({ name = 'friend' }) {
 }
 
 // Explanation:
-// (Write your explanation here)
+// The message was stored in a regular variable, which React did not track, so
+// updating it does not trigger a re-render value.
+// Now the message is stored in a state using useState, React can now track changes and update the UI when(as) the value changes.

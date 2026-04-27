@@ -1,14 +1,11 @@
 export default function SnackList() {
   const Snacks = [
     { name: 'Peanut Butter Cups', rank: 1 },
-    { name: 'Oreo Cookies', rank: 2 },
+    { name: 'Oreos', rank: 2 },
     { name: 'Doritos', rank: 3 },
     { name: 'Gummy Clusters', rank: 11 },
     { name: 'Cheez-Its', rank: 6 },
-    { name: 'Popcorn', rank: 5 },
-    { name: 'Takis', rank: 14 },
-    { name: 'Skittles', rank: 13 },
-    { name: 'Salt Water Taffy', rank: 12 },
+    { name: 'Taffy', rank: 5 },
     { name: 'Pringles', rank: 4 },
     { name: 'Cheetos', rank: 7 },
     { name: 'Rice Krispies Treats', rank: 8 },
