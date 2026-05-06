@@ -7,7 +7,7 @@ export default function FindCorrectHook() {
 
   function handleClick() {
     clickCount.current++;
-    console.log(clickCount.current);
+    console.log('Clicks:', clickCount.current);
   }
 
   return (
@@ -17,3 +17,9 @@ export default function FindCorrectHook() {
     </div>
   );
 }
+
+// Explanation:
+// Since a normal variable resets on every render, it cannot persist values.
+// useRef allows for a value to persist across renders without a re-render.
+// Updating clickCount.current does not update the UI, which is why I logged the value in the console instead.
+// This shows how useRef is useful for storing values that do not need to trigger UI updates.
