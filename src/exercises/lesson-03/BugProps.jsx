@@ -11,9 +11,10 @@
 
   Use the commented "Explanation" section at the bottom of this lesson's components.
 */
+import { useState } from 'react';
 
 export default function BugProps({ name = 'friend' }) {
-  let message = 'Hello, ' + name;
+  const [message, setMessage] = useState('Hello, ' + name);
 
   function handleChange() {
     message = 'Hi, ' + name + '!';
@@ -29,3 +30,7 @@ export default function BugProps({ name = 'friend' }) {
 
 // Explanation:
 // (Write your explanation here)
+/* 
+  The message variable was changed directly, but React doesn't re-render when that happens.
+// Using useState and its setter function to update the message and display the new greeting is the better way.
+*/
