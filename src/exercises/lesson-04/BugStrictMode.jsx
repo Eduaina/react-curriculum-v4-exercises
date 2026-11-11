@@ -7,9 +7,11 @@ export default function BugStrictMode() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       setCount((c) => c + 1);
     }, 1000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -21,3 +23,8 @@ export default function BugStrictMode() {
 }
 
 // Write your explanation of how StrictMode helps us catch this bug
+/*
+StrictMode helps to catch bugs by running effects an extra time in development.
+To prevent multiple intervals running at once and increasing the count too quickly, clean up is necessary.
+Using clearInterval cleans up the interval and prevents this.
+*/
